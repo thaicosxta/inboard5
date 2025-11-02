@@ -13,9 +13,7 @@ Criar um sistema de onboarding para **novos colaboradores**, que seja acompanhad
 
 ## 🌐 Acesse o MVP online
 Você pode testar o esboço diretamente no navegador:  
-[**Inboard5 - MVP Online**]()
-
----
+🔗 [Clique aqui para acessar o projeto](https://inboard5.vercel.app/)---
 
 ## 🗂 Estrutura do Projeto
 - `index.html` - Página inicial
