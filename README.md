@@ -13,7 +13,7 @@ Criar um sistema de onboarding para **novos colaboradores**, que seja acompanhad
 
 ## 🌐 Acesse o MVP online
 Você pode testar o esboço diretamente no navegador:  
-[**Inboard5 - MVP Online**](https://inboard5-2jto1ijee-thaicosxtas-projects.vercel.app/)
+[**Inboard5 - MVP Online**]()
 
 ---
 
@@ -30,28 +30,20 @@ Você pode testar o esboço diretamente no navegador:
 ## 🖼 Visual do MVP
 
 ### Página Inicial
-![Página Inicial](caminho/para/screenshot-index.png)
+![Página Inicial](<img width="1913" height="683" alt="página-inicial - inboard" src="https://github.com/user-attachments/assets/6cb5079c-ef32-486c-b933-bb1521030d15" />
+)
 
 ### Dashboard do Colaborador
-![Dashboard Colaborador](caminho/para/screenshot-colaborador.png)
+![Dashboard Colaborador](<img width="1906" height="741" alt="dashboard-colaborador" src="https://github.com/user-attachments/assets/06299639-3860-498f-b44a-515552da0614" />
+)
 
 ### Dashboard do Gestor
-![Dashboard Gestor](caminho/para/screenshot-gestor.png)
+![Dashboard Gestor](<img width="1907" height="662" alt="dashboard-gestor" src="https://github.com/user-attachments/assets/e6ef718c-bae4-44ff-a664-3b282a77439d" />
+)
 
 ### Dashboard do RH
-![Dashboard RH](caminho/para/screenshot-rh.png)
-
-> Substitua `caminho/para/screenshot-*.png` pelas imagens reais que você colocar na pasta do projeto.  
-> Você também pode gerar **GIFs curtos** mostrando interações e colocar assim:  
-```markdown
-![Exemplo GIF](caminho/para/demo.gif)
-🚀 Como usar localmente
-Clone este repositório:
-
-bash
-Copiar código
-git clone https://github.com/thaicosxta/inboard5.git
-Abra index.html no navegador para visualizar o esboço.
+![Dashboard RH](<img width="1893" height="805" alt="dashboard-RH" src="https://github.com/user-attachments/assets/0fa364ea-5920-4b64-b463-9e83006e016e" />
+)
 
 ⚠ Observações
 Projeto apenas para validação de conceito.
@@ -60,5 +52,4 @@ Funcionalidades ainda não estão completas.
 
 Não deve ser usado em produção.
 
-📫 Contato
 Desenvolvido por Thaina Silva
