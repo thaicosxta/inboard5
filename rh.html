@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INBOARD — RH</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-dashboard">
+  <aside class="sidebar" aria-label="Navegação lateral">
+    <div class="side-brand">
+      <div class="logo-sq">IN</div>
+      <div>INBOARD</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="dashboard" class="active">Dashboard</a></li>
+        <li><a href="#" data-section="create">Create</a></li>
+        <li><a href="#" data-section="cronograma">Cronograma</a></li>
+        <li><a href="#" data-section="config">Configurações</a></li>
+        <li><a href="#" data-section="painel">Painel</a></li>
+        <li><a href="#" data-section="inbox">Empresa (Inbox)</a></li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="dash-header">
+      <h2>Área de RH</h2>
+      <div class="small-meta">Crie módulos, gerencie cronogramas e conecte colaboradores a gestores.</div>
+    </header>
+
+    <section class="content-grid">
+      <article class="card large content-area">
+        <div class="section-pane active-section" id="dashboard">
+          <h3>Dashboard</h3>
+          <p>Adicionar colaborador e integrar a um time/gestor</p>
+          <button class="btn primary" id="addCollaborator">Adicionar Colaborador</button>
+
+          <div id="collabList" style="margin-top:12px"></div>
+
+          <h4 style="margin-top:16px">Editar Onboarding</h4>
+          <p>Selecione um colaborador para editar os módulos que ele terá.</p>
+          <div id="editOnboarding"></div>
+        </div>
+
+        <div class="section-pane" id="create" aria-hidden="true">
+          <h3>Create</h3>
+          <p>Crie módulos, quizzes ou relatórios.</p>
+          <form id="createForm" class="create-form">
+            <label>Título</label><input id="createTitle" required/>
+            <label>Tipo</label>
+            <select id="createType"><option value="module">Módulo</option><option value="quiz">Quiz</option><option value="report">Relatório</option></select>
+            <label>Descrição</label><textarea id="createDesc" rows="3"></textarea>
+
+            <label>Anexos (links, pdf, vídeo) — simulação</label>
+            <input id="createAttach" placeholder="Cole um link ou nome do arquivo"/>
+
+            <div class="nav-row" style="margin-top:10px">
+              <button class="btn link" type="button" id="createCancel">Cancelar</button>
+              <button class="btn primary" type="submit">Criar</button>
+            </div>
+          </form>
+          <div id="createdItems" style="margin-top:12px"></div>
+        </div>
+
+        <div class="section-pane" id="cronograma" aria-hidden="true">
+          <h3>Cronograma</h3>
+          <p>Visão simples de calendário com tarefas:</p>
+          <div id="cronogramaList"></div>
+        </div>
+
+        <div class="section-pane" id="config" aria-hidden="true">
+          <h3>Configurações</h3>
+          <p>Parâmetros da plataforma.</p>
+          <label>Tema</label>
+          <select id="uiTheme"><option value="light">Claro</option><option value="dark">Escuro</option></select>
+
+          <label>Permissões</label>
+          <select id="permCreate"><option>RH Apenas</option><option>Gestor + RH</option></select>
+
+          <label>Integrações</label>
+          <div class="small">Conectar com:</div>
+          <label><input type="checkbox" id="int_slack" /> Slack</label><br/>
+          <label><input type="checkbox" id="int_google" /> Google Workspace</label><br/>
+          <label class="checkbox"><input id="notifEmail" type="checkbox" checked/> Enviar e-mail automático</label>
+        </div>
+
+        <div class="section-pane" id="painel" aria-hidden="true">
+          <h3>Painel</h3>
+          <div id="panelOverview"></div>
+        </div>
+
+        <div class="section-pane" id="inbox" aria-hidden="true">
+          <h3>Empresa — Caixa de entrada</h3>
+          <div id="inboxList"></div>
+        </div>
+      </article>
+
+      <aside class="card small" id="sideHelp">
+        <h4>Monitor de Relatórios</h4>
+        <div id="helpBox"></div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

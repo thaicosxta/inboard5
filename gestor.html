@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INBOARD — Gestor</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-dashboard">
+  <aside class="sidebar" aria-label="Navegação lateral">
+    <div class="side-brand">
+      <div class="logo-sq">IN</div>
+      <div>INBOARD</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="visao" class="active">Visão Geral</a></li>
+        <li><a href="#" data-section="equipe">Equipe</a></li>
+        <li><a href="#" data-section="processos">Processos</a></li>
+        <li><a href="#" data-section="contratacoes">Contratações</a></li>
+        <li><a href="#" data-section="bordotri">Bordo TRI</a></li>
+        <li><a href="index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="dash-header">
+      <h2>Área do Gestor</h2>
+      <div class="small-meta">Gerencie sua equipe, avalie novos colaboradores e acompanhe processos.</div>
+    </header>
+
+    <section class="content-grid">
+      <article class="card large content-area">
+        <div class="section-pane active-section" id="visao">
+          <h3>Visão Geral</h3>
+          <p>Novos colaboradores aguardando avaliação:</p>
+          <div id="newHires"></div>
+        </div>
+
+        <div class="section-pane" id="equipe" aria-hidden="true">
+          <h3>Equipe</h3>
+          <div id="teamTable"></div>
+        </div>
+
+        <div class="section-pane" id="processos" aria-hidden="true">
+          <h3>Processos</h3>
+          <p>Itens para aprovar / revisar</p>
+          <div id="processList"></div>
+        </div>
+
+        <div class="section-pane" id="contratacoes" aria-hidden="true">
+          <h3>Contratações</h3>
+          <button class="btn primary" id="newVacancy">Criar Vaga</button>
+          <div id="vacancyList" style="margin-top:12px"></div>
+        </div>
+
+        <div class="section-pane" id="bordotri" aria-hidden="true">
+          <h3>Bordo TRI - Avaliações</h3>
+          <div id="gestorBordo"></div>
+        </div>
+      </article>
+
+      <aside class="card small">
+        <h4>Atalhos</h4>
+        <button class="btn link" id="solicitRH">Solicitar ao RH</button>
+        <button class="btn link" id="viewReports">Relatórios</button>
+      </aside>
+    </section>
+  </main>
+
+  <!-- modal reused -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

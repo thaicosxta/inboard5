@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INBOARD — Colaborador</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-dashboard">
+  <aside class="sidebar" aria-label="Navegação lateral">
+    <div class="side-brand">
+      <div class="logo-sq">IN</div>
+      <div>INBOARD</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="home" class="active">Home</a></li>
+        <li><a href="#" data-section="time">Time</a></li>
+        <li><a href="#" data-section="modulos">Módulos</a></li>
+        <li><a href="#" data-section="quizzes">Quizzes</a></li>
+        <li><a href="#" data-section="relatorios">Relatórios</a></li>
+        <li><a href="#" data-section="bordotri">Bordo TRI</a></li>
+        <li><a href="#" data-section="suporte">Suporte</a></li>
+        <li><a href="#" data-section="perfil">Meu Perfil</a></li>
+        <li><a href="index.html" id="logout">Sair</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="dash-header">
+      <h2>Olá, <span id="userName">Usuário</span></h2>
+      <div class="progress-mini">
+        <small>Progresso do Onboarding</small>
+        <div class="progress-bar" id="miniProgress"><div class="fill" style="width:0%"></div></div>
+      </div>
+    </header>
+
+    <section class="content-grid">
+      <article class="card large content-area" id="contentArea">
+        <div class="section-pane active-section" id="home">
+          <h3>Boas-vindas</h3>
+          <div class="card welcome-content">
+            <h4>Primeiros passos</h4>
+            <ol>
+              <li>Conhecer o time</li>
+              <li>Fazer os módulos iniciais</li>
+              <li>Realizar o quiz de alinhamento</li>
+            </ol>
+            <p>Marque abaixo quando concluir este conteúdo para desbloquear os próximos passos.</p>
+            <label class="checkbox">
+              <input type="checkbox" id="welcomeDone" /> <span>Li e concluí as boas-vindas</span>
+            </label>
+            <div class="nav-row" style="margin-top:12px;">
+              <button class="btn secondary" id="homePrev" disabled>Voltar</button>
+              <button class="btn primary" id="homeNext">Próximo</button>
+            </div>
+
+            <div id="receivedEvals" style="margin-top:12px"></div>
+          </div>
+        </div>
+
+        <div class="section-pane" id="time" aria-hidden="true">
+          <h3>Time</h3>
+          <p>Clique em um membro para ver o card completo.</p>
+          <div id="timeList" class="time-list"></div>
+        </div>
+
+        <div class="section-pane" id="modulos" aria-hidden="true">
+          <h3>Módulos</h3>
+          <p>Complete os módulos para progredir no onboarding.</p>
+          <div id="modulesList" class="modules-grid"></div>
+        </div>
+
+        <div class="section-pane" id="quizzes" aria-hidden="true">
+          <h3>Quizzes</h3>
+          <p>Teste seus conhecimentos. (3 quizzes)</p>
+          <div id="quizzesList" class="modules-grid"></div>
+        </div>
+
+        <div class="section-pane" id="relatorios" aria-hidden="true">
+          <h3>Relatórios</h3>
+          <div id="reportCards"></div>
+        </div>
+
+        <div class="section-pane" id="bordotri" aria-hidden="true">
+          <h3>Bordo TRI</h3>
+          <p>Questionário trimestral para avaliar sua experiência.</p>
+          <form id="bordoForm" class="vertical-form">
+            <label>1. Como você avalia seu onboarding até aqui?</label>
+            <select required id="bt_q1"><option value="">Selecione</option><option>Ótimo</option><option>Bom</option><option>Regular</option></select>
+
+            <label>2. Quais os maiores desafios?</label>
+            <textarea id="bt_q2" rows="4" placeholder="Descreva com calma..."></textarea>
+
+            <label>3. Alguma sugestão para melhorar?</label>
+            <textarea id="bt_q3" rows="3" placeholder="Sugestão..."></textarea>
+
+            <div class="nav-row" style="margin-top:12px">
+              <button class="btn link" type="button" id="bordoCancel">Cancelar</button>
+              <button class="btn primary" type="submit">Enviar</button>
+            </div>
+          </form>
+          <div id="bordoResult" class="small" style="margin-top:10px"></div>
+        </div>
+
+        <div class="section-pane" id="suporte" aria-hidden="true">
+          <h3>Suporte</h3>
+          <div class="support-layout">
+            <div id="supportList" class="support-list"></div>
+            <div class="support-input">
+              <form id="supportForm" class="support-form">
+                <label class="small">Descreva sua dúvida</label>
+                <textarea id="supportInput" placeholder="Descreva sua dúvida..." rows="4" style="border-radius:10px;border:1px solid #e5e7eb;padding:10px"></textarea>
+                <div class="nav-row" style="margin-top:8px">
+                  <button class="btn primary" type="submit">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-pane" id="perfil" aria-hidden="true">
+          <h3>Meu Perfil</h3>
+          <div class="profile-card">
+            <div class="profile-photo" id="profilePhoto"></div>
+            <h4 id="profileName">Nome</h4>
+            <div class="small" id="profileRole">Função</div>
+            <a id="downloadReport" class="btn link" style="margin-top:8px">⬇ Relatório</a>
+
+            <hr style="margin:12px 0" />
+
+            <form id="editProfileForm">
+              <label>Nome</label><input id="pf_name"/>
+              <label>E-mail</label><input id="pf_email"/>
+              <label>Função</label><input id="pf_role"/>
+              <div class="nav-row" style="margin-top:10px">
+                <button class="btn link" type="button" id="pf_cancel">Cancelar</button>
+                <button class="btn primary" type="submit">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card small" id="sideInfo">
+        <!-- Meu Perfil / Resumo: colocado aqui conforme pedido -->
+        <div id="summaryProfile">
+          <div class="profile-photo" id="sidebarPhoto" style="width:96px;height:96px;margin:0 auto"></div>
+          <h4 id="sidebarName" style="text-align:center;margin-top:8px">Nome</h4>
+          <div class="small" id="sidebarRole" style="text-align:center">Função</div>
+          <div style="margin-top:10px;text-align:center">
+            <a id="sidebarDownload" class="btn link">⬇ Relatório</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Modal (reusable) -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

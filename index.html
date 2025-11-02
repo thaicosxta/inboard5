@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INBOARD — Boas-vindas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-login">
+  <header class="topbar center-top">
+    <div class="brand">
+      <div class="logo-sq inboard-logo">INBOARD</div>
+    </div>
+  </header>
+
+  <main class="container welcome-container">
+    <section class="hero welcome-pane">
+      <h2 class="welcome-title">Bem-vinda à Plataforma Inboard</h2>
+      <p class="welcome-sub">Escolha seu perfil para começar a jornada.</p>
+
+      <div class="roles-row">
+        <div class="role-card role-colaborador" data-role="colaborador">
+          <h3>Colaborador</h3>
+          <p>Acesse suas tarefas, treinamentos e informações pessoais.</p>
+          <button class="role-cta enter-btn" data-role="colaborador" aria-label="Entrar como colaborador">
+            <span class="icon">👤</span><span>Colaborador</span>
+          </button>
+        </div>
+
+        <div class="role-card role-gestor" data-role="gestor">
+          <h3>Gestor</h3>
+          <p>Gerencie sua equipe, acompanhe desempenho e aprove processos.</p>
+          <button class="role-cta enter-btn" data-role="gestor" aria-label="Entrar como gestor">
+            <span class="icon">👔</span><span>Gestor</span>
+          </button>
+        </div>
+
+        <div class="role-card role-rh" data-role="rh">
+          <h3>RH</h3>
+          <p>Tenha controle completo sobre contratações, onboarding e dados do time.</p>
+          <button class="role-cta enter-btn" data-role="rh" aria-label="Entrar como RH">
+            <span class="icon">🧑‍💼</span><span>RH</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer small" style="text-align:center;">
+    © INBOARD — PLATAFORMA DE ONBOARDING
+  </footer>
+
+  <!-- Login Modal (centered) -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="loginModalClose">&times;</button>
+      <div style="max-width:420px;margin:0 auto;">
+        <div class="logo-large" style="text-align:center;margin-bottom:6px">INBOARD</div>
+        <h3 style="text-align:center;margin:6px 0">LOGIN</h3>
+        <form id="modalLoginForm" autocomplete="off">
+          <label class="field" style="margin-bottom:8px">
+            <span class="field-icon">👤</span>
+            <input id="modalEmail" name="email" type="email" placeholder="E-mail@corporativo" required />
+          </label>
+
+          <label class="field" style="margin-bottom:6px">
+            <span class="field-icon">🔒</span>
+            <input id="modalPassword" name="password" type="password" placeholder="Senha" required />
+          </label>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <a href="#" id="forgotPassword" class="small">Esqueci minha senha</a>
+            <span id="modalProfileHint" class="small"></span>
+          </div>
+
+          <div style="display:flex;gap:10px;justify-content:center">
+            <button type="submit" class="btn primary">Entrar</button>
+            <button type="button" id="loginCancel" class="btn link">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
